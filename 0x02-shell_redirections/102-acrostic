@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(cut -cl | tr -d " \n")
+awk '{a=a substr($1,1,1)}END{while(getline){if(substr($0,1,1)~substr(a,c++,1))print}}' "$1"; echo
